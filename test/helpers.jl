@@ -17,6 +17,8 @@
         @test string(m) == string(u)
         m = Member(u, missing, [], now(), missing, true, true)
         @test string(m) == string(u)
+        m = Member(u, "foo", [], now(), nothing, true, true)
+        @test string(m) == string(u)
         # Make sure that string interpolation works normally (julia#21982).
         @test "$u" == string(u)
         @test "foo $u bar" == "foo " * string(u) * " bar"
